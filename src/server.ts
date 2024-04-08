@@ -6,20 +6,25 @@ const app = express();
 app.use(express.json());
 app.use(express.static("public"));
 
-const port = 3000;
+(async () => {
+  // const { PORT } = process.env;
+  // if (!PORT) process.exit(1);
+  const db = new SqlDataStore();
+  await db.runDB();
 
-app.get("/", (_req, res) => res.send("Got you!"));
-const db = new SqlDataStore();
-db.runDB();
+  const port = 3000;
 
-app.post("/api/test", async (req, res) => {
-  const { id, age, name, email } = req.body;
-  const user: TestUser = { id, age, name, email };
+  app.get("/", (_req, res) => res.send("Got you!"));
 
-  await db.createTestUser(user);
-  return res.status(201).send({ user });
-});
+  app.post("/api/test", async (req, res) => {
+    const { id, age, name, email } = req.body;
+    const user: TestUser = { id, age, name, email };
 
-app.listen(port, () =>
-  console.log(`Server listening at http://localhost:${port}`),
-);
+    await db.createTestUser(user);
+    return res.status(201).send({ user });
+  });
+
+  app.listen(port, () =>
+    console.log(`Server listening at http://localhost:${port}`),
+  );
+})();

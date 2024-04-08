@@ -3,6 +3,9 @@ import mysql from "mysql2";
 import { Pool } from "mysql2/promise";
 import { TestUser } from "./types";
 
+/**
+ * @description Just for testing purposes
+ */
 export class SqlDataStore {
   private pool!: Pool;
 
