@@ -1,8 +1,8 @@
 {
-  "name": "migrationtool",
+  "name": "my-migrator",
   "version": "1.0.0",
   "description": "Migration tool for MySQL database with TypeScript",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "copy": "copyfiles -u 1 src/**/*.sql dist",
     "start": "npx tsc && npm run copy && nodemon dist/server.js --watch ./src/*",

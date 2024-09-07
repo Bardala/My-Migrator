@@ -1,0 +1,17 @@
+{
+  "name": "testproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/server",
+    "start:dev": "nodemon src/server"
+  },
+  "dependencies": {
+    "my-migrator": "file:../my-migrator"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
