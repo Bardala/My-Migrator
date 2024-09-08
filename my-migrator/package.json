@@ -2,11 +2,27 @@
   "name": "my-migrator",
   "version": "1.0.0",
   "description": "This is a tool for managing MySQL database migrations, written in TypeScript.",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "copy": "copyfiles -u 1 src/**/*.sql dist",
+    "start": "npx tsc && npm run copy && nodemon dist/server.js --watch ./src/*",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc && npm run copy"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.12.5",
+    "express": "^4.19.2",
+    "typescript": "^5.5.4"
+  },
+  "peerDependencies": {
+    "mysql2": "^3.9.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "copyfiles": "^2.4.1"
+  }
 }

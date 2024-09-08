@@ -1,0 +1,10 @@
+node_modules/
+src/
+.git/
+.gitignore
+.npmignore
+tsconfig.json
+test/
+tests/
+docs/
+.env
