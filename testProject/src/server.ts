@@ -1,6 +1,5 @@
 import express from "express";
 import { SqlDataStore } from "./SqlDataStore.class";
-import { randomBytes, randomFill, randomInt, randomUUID } from "crypto";
 
 const app = express();
 
@@ -21,21 +20,6 @@ export type TestUser = {
   await db.runDB();
 
   const port = 3000;
-
-  // async function addUser(): Promise<TestUser> {
-  //   const name: string = randomUUID as unknown as string;
-
-  //   const user: TestUser = {
-  //     id: randomInt as unknown as number,
-  //     age: randomInt as unknown as number,
-  //     name,
-  //     email: `${name}@test.dev`,
-  //   };
-  //   await db.createTestUser(user);
-  //   return user;
-  // }
-
-  // addUser();
 
   app.get("/", (_req, res) => res.send("Got you!"));
 

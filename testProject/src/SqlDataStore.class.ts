@@ -1,6 +1,4 @@
-import { DbMigration } from "../../my-migrator/src";
-// import { DbMigration } from "my-migrator";
-
+import { DbMigration } from "my-migrator";
 import mysql from "mysql2";
 import { Pool } from "mysql2/promise";
 import { TestUser } from "./server";

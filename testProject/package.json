@@ -1,17 +1,25 @@
 {
-  "name": "testproject",
+  "name": "my-migrator",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.ts",
+  "description": "Migration tool for MySQL database with TypeScript",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/server",
-    "start:dev": "nodemon src/server"
-  },
-  "dependencies": {
-    "my-migrator": "file:../my-migrator"
+    "copy": "copyfiles -u 1 src/**/*.sql dist",
+    "start": "npx tsc && npm run copy && nodemon dist/server.js --watch ./src/*",
+    "ts": "nodemon src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Islam Bardala",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.3"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "@types/jest": "^29.5.12"
+  }
 }
