@@ -6,7 +6,6 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "copy": "copyfiles -u 1 src/**/*.sql dist",
-    "start": "npx tsc && npm run copy && nodemon dist/server.js --watch ./src/*",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc && npm run copy"
   },
