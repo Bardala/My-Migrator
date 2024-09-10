@@ -20,6 +20,10 @@
   "peerDependencies": {
     "mysql2": "^3.9.3"
   },
+  "repository": {
+    "type": "git",
+    "url": "httpshttps://github.com/Bardala/My-Migrator/tree/master/my-migrator"
+  },
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "copyfiles": "^2.4.1"
