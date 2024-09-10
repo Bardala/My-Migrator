@@ -10,8 +10,8 @@
     "build": "npx tsc && npm run copy"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Islam Bardala",
+  "license": "MIT",
   "dependencies": {
     "@types/node": "^20.12.5",
     "express": "^4.19.2",
