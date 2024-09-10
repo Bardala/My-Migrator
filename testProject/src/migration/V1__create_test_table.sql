@@ -1,4 +1,4 @@
-CREATE TABLE test_user (
+CREATE TABLE IF NOT EXISTS test_user (
   id INT PRIMARY KEY,
   name VARCHAR(50),
   age INT,
