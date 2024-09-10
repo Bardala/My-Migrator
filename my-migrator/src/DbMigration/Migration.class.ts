@@ -132,7 +132,8 @@ export class DbMigration {
     success: boolean,
   ): Promise<void> {
     const checkSum = this.calculateChecksum(fileName);
-    const installedBy = process.env.MY_SQL_DB_USER || "unknown";
+    const installedBy =
+      (await this.pool.getConnection()).config.user || "unknown";
 
     const insertQuery = `
     INSERT INTO schema_history (version, file_name, check_sum, installed_by, success)
