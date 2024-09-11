@@ -1,6 +1,6 @@
 {
   "name": "my-migrator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is a tool for managing MySQL database migrations, written in TypeScript.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,10 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "httpshttps://github.com/Bardala/My-Migrator/tree/master/my-migrator"
+    "url": "https://github.com/Bardala/My-Migrator/tree/master/my-migrator"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
-    "copyfiles": "^2.4.1"
+    "copyfiles": "^2.4.1",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5"
   }
 }
